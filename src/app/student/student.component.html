@@ -1,0 +1,24 @@
+<form class="search-bar">
+    <input type="text" placeholder="type here student id to search" class="search-input">
+    <button class="search-btn">Search</button>
+</form>
+
+<table class="std-table">
+  <tr class="heading">
+      <th>Student ID</th>
+      <th>Student Name</th>
+      <th>Enrolled Course</th>
+      <th>Mobile Number</th>
+  </tr>
+  <tr *ngFor="let student of students;">
+      <td>{{student.studentId}}</td>
+      <td>{{student.studentName}}</td>
+      <td>{{student.enrolledCourse}}</td>
+      <td>{{student.mobileNumber}}</td>
+      <td class="actions">
+        <button>&#9998;</button>
+        <button class="del-btn" (click)="deleteStudent()">&#10006;</button>
+      </td>
+  </tr>
+</table>
+<button class="add-std" (click)="addStudent()">&#8853; Add Student</button>
